@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/views/Home/Home.vue';
+import { createRouter, createWebHashHistory } from 'vue-router';
+import Home from '@/views/Home.vue';
 import SchoolDetails from '@/views/SchoolDetails/SchoolDetails.vue';
 
 const routes = [
