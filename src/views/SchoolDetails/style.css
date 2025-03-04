@@ -1,4 +1,3 @@
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -122,14 +121,16 @@ h1 {
 .image-container {
     margin-bottom: 20px;
     width: 100%;
-    height: 400px; /* 根据需要调整容器高度 */
+    height: 400px;
+    /* 根据需要调整容器高度 */
     overflow: hidden;
 }
 
 .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 整个图片完整展示，但可能会留白 */
+    object-fit: contain;
+    /* 整个图片完整展示，但可能会留白 */
     display: block;
 }
 
@@ -149,6 +150,7 @@ h1 {
     line-height: 1.5;
     /* 调整行间距 */
 }
+
 .geo-container {
     width: 100%;
     height: 70vh;
@@ -166,9 +168,9 @@ h1 {
 
 .image-wrapper {
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .image-wrapper img {

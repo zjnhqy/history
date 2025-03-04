@@ -34,40 +34,40 @@ export default {
     },
     mounted() {
         this.updateLineCoordinates();
-    window.addEventListener("resize", this.updateLineCoordinates);
+        window.addEventListener("resize", this.updateLineCoordinates);
 
-    this.$nextTick(() => {
-        const container = this.$refs.buttonContainer;
-        if (!container) {
-            console.error("buttonContainer not found in Vue component.");
-            return;
-        }
+        this.$nextTick(() => {
+            const container = this.$refs.buttonContainer;
+            if (!container) {
+                console.error("buttonContainer not found in Vue component.");
+                return;
+            }
 
-        const buttons = container.getElementsByTagName("button");
+            const buttons = container.getElementsByTagName("button");
 
-        function checkButtonWrapping() {
-            if (buttons.length === 0) return;
+            function checkButtonWrapping() {
+                if (buttons.length === 0) return;
 
-            let firstTop = buttons[0].offsetTop; // 获取第一个按钮的顶部位置
+                let firstTop = buttons[0].offsetTop; // 获取第一个按钮的顶部位置
 
-            // 遍历每个按钮，检查是否换行
-            for (let i = 0; i < buttons.length; i++) {
-                const button = buttons[i];
-                // 如果该按钮的位置不与第一个按钮的顶部位置相同，说明它换行了
-                if (button.offsetTop !== firstTop) {
-                    button.style.display = "none";  // 隐藏按钮
-                } else {
-                    button.style.display = "inline-block";  // 显示按钮
+                // 遍历每个按钮，检查是否换行
+                for (let i = 0; i < buttons.length; i++) {
+                    const button = buttons[i];
+                    // 如果该按钮的位置不与第一个按钮的顶部位置相同，说明它换行了
+                    if (button.offsetTop !== firstTop) {
+                        button.style.display = "none";  // 隐藏按钮
+                    } else {
+                        button.style.display = "inline-block";  // 显示按钮
+                    }
                 }
             }
-        }
 
-        // 监听窗口大小变化
-        window.addEventListener("resize", checkButtonWrapping);
+            // 监听窗口大小变化
+            window.addEventListener("resize", checkButtonWrapping);
 
-        // 初始检查
-        checkButtonWrapping();
-    });
+            // 初始检查
+            checkButtonWrapping();
+        });
     },
     beforeDestroy() {
         window.removeEventListener("resize", this.updateLineCoordinates);
